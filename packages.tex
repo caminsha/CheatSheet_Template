@@ -1,0 +1,170 @@
+\usepackage[nswissgerman]{babel}
+\usepackage[utf8]{inputenc}
+
+%============== BibLaTeX ========================
+%-------------- Allgemein -----------------------
+\usepackage[backend=biber,sorting=none]{biblatex} 
+\usepackage{csquotes}
+%------------- Neudefinitionen ------------------
+%\DefineBibliographyStrings{german}{%
+%urlseen = {aufgerufen am},
+%}
+
+% Multi columns
+\usepackage{multicol}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+
+% Colors
+\usepackage{colortbl}
+\usepackage{xcolor}
+
+\definecolor{magenta}{RGB}{90,56,165}
+\definecolor{dockerBlue}{RGB}{90,177,241}
+
+% Mathematics
+\usepackage{amsmath,amssymb}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+
+% Lists 
+\usepackage{enumitem}
+\setlist{nosep}
+
+% Dashed-Tables
+\usepackage{arydshln}
+\setlength\dashlinedash{0.2pt}
+\setlength\dashlinegap{1.5pt}
+\setlength\arrayrulewidth{0.3pt}
+
+%============== Code-Highlighting ===============
+\usepackage{listings}
+
+%Enter your programming language in the subject here
+\lstset{frame=tb,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+% Hyperlinkgs (should be at the end, but before geometry)
+\usepackage[pdftex,
+pdfauthor={TBD},
+pdftitle={TBD},
+hidelinks]{hyperref}
+
+% Geometry (should be at the end)
+\usepackage[landscape]{geometry}
+\makeatletter
+
+%\colorbox[HTML]{e4e4e4}{\makebox[\textwidth-2\fboxsep][l]{texto}
+
+
+%You can also use this:
+\newcommand{\boxnode}[2]
+{
+    {
+    %------------ Styling ----------------
+    
+    %------------ Content ----------------
+    \begin{tikzpicture}
+    \node [mybox] (box){%
+        \begin{minipage}{0.3\textwidth}
+                #2
+        \end{minipage}
+    };
+    %------------  Header ---------------------
+    \node[fancytitle, right=10pt] at (box.north west) {#1};
+    \end{tikzpicture}
+    }
+}
+
+
+\newcommand{\yellowBorderNode}[2]
+{
+    {
+    %------------ Styling ----------------
+    \tikzstyle{mybox} = [draw=yellow, fill=white, very thick, rectangle, rounded corners, inner sep=10pt, inner ysep=10pt]
+
+    %------------ Content ----------------
+    \begin{tikzpicture}
+    \node [mybox] (box){%
+        \begin{minipage}{0.3\textwidth}
+                #2
+        \end{minipage}
+    };
+    %------------  Header ---------------------
+    \node[fancytitle, right=10pt] at (box.north west) {#1};
+    \end{tikzpicture}
+    }
+}
+
+\newcommand{\greenBorderNode}[2]
+{
+    {
+    %------------ Styling ----------------
+    \tikzstyle{mybox} = [draw=green, fill=white, very thick, rectangle, rounded corners, inner sep=10pt, inner ysep=10pt]
+
+    %------------ Content ----------------
+    \begin{tikzpicture}
+    \node [mybox] (box){%
+        \begin{minipage}{0.3\textwidth}
+                #2
+        \end{minipage}
+    };
+    %------------  Header ---------------------
+    \node[fancytitle, right=10pt] at (box.north west) {#1};
+    \end{tikzpicture}
+    }
+}
+
+
+\newcommand{\redBorderNode}[2]
+{
+    {
+    %------------ Styling ----------------
+    \tikzstyle{mybox} = [draw=red, fill=white, very thick, rectangle, rounded corners, inner sep=10pt, inner ysep=10pt]
+
+    %------------ Content ----------------
+    \begin{tikzpicture}
+    \node [mybox] (box){%
+        \begin{minipage}{0.3\textwidth}
+                #2
+        \end{minipage}
+    };
+    %------------  Header ---------------------
+    \node[fancytitle, right=10pt] at (box.north west) {#1};
+    \end{tikzpicture}
+    }
+}
+
+\newcommand{\magentaBorderNode}[2]
+{
+    {
+    %------------ Styling ----------------
+    \tikzstyle{mybox} = [draw=magenta, fill=white, very thick, rectangle, rounded corners, inner sep=10pt, inner ysep=10pt]
+
+    %------------ Content ----------------
+    \begin{tikzpicture}
+    \node [mybox] (box){%
+        \begin{minipage}{0.3\textwidth}
+                #2
+        \end{minipage}
+    };
+    %------------  Header ---------------------
+    \node[fancytitle, right=10pt] at (box.north west) {#1};
+    \end{tikzpicture}
+    }
+}

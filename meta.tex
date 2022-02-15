@@ -1,0 +1,35 @@
+% !TEX encoding = UTF-8 Unicode
+
+% Meta-Informationen ------------------------------------------------------------------------------------
+%   Definition von globalen Parametern, die im gesamten Dokument verwendet
+%   werden können (z.B auf dem Deckblatt etc.).
+%
+%   ACHTUNG: Wenn die Texte Umlaute oder ein Esszet enthalten, muss der folgende
+%            Befehl bereits an dieser Stelle aktiviert werden:
+%            \usepackage[latin1]{inputenc}
+% -------------------------------------------------------------------------------------------------------
+
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+\advance\topmargin-.8in
+\advance\textheight3in
+\advance\textwidth3in
+\advance\oddsidemargin-1.5in
+\advance\evensidemargin-1.5in
+\parindent0pt
+\parskip2pt
+\newcommand{\hr}{\centerline{\rule{3.5in}{1pt}}}
+
+% Personal Things
+\newcommand{\titel}{TBD}
+\newcommand{\autor}{TBD}
+
+\newcommand{\nodeGeneral}{\boxnode}
+\newcommand{\greenNode}{\greenBorderNode}
+\newcommand{\yellowNode}{\yellowBorderNode}
+\newcommand{\redNode}{\redBorderNode}
+\newcommand{\magentaNode}{\magentaBorderNode}
+
+\newcommand{\code}[1]{\lstinline!#1!}

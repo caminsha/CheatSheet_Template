@@ -1,0 +1,25 @@
+\PassOptionsToPackage{table}{xcolor}
+\documentclass[a4,9pt]{extarticle}
+\input{packages.tex}
+\input{meta.tex}
+
+% Bibliography
+\addbibresource{literatur.bib}
+
+\begin{document}
+
+\begin{center}{\huge{\textbf{\titel}}\\\normalsize{\textbf{\autor}}}
+\end{center}
+\begin{multicols*}{3}
+
+\tikzstyle{mybox} = [draw=black, fill=white, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=10pt]
+\tikzstyle{fancytitle} =[fill=white, text=black, font=\bfseries]
+
+\input{nodes/nodes.tex}
+
+\renewcommand*{\bibfont}{\footnotesize}
+\input{nodes/literatur.tex}
+
+\end{multicols*}
+\end{document}
