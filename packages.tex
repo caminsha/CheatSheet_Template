@@ -168,3 +168,22 @@ hidelinks]{hyperref}
     \end{tikzpicture}
     }
 }
+
+\newcommand{\blueBorderNode}[2]
+{
+    {
+    %------------ Styling ----------------
+    \tikzstyle{mybox} = [draw=blue, fill=white, very thick, rectangle, rounded corners, inner sep=10pt, inner ysep=10pt]
+
+    %------------ Content ----------------
+    \begin{tikzpicture}
+    \node [mybox] (box){%
+        \begin{minipage}{0.3\textwidth}
+                #2
+        \end{minipage}
+    };
+    %------------  Header ---------------------
+    \node[fancytitle, right=10pt] at (box.north west) {#1};
+    \end{tikzpicture}
+    }
+}
