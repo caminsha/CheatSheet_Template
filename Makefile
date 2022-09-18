@@ -18,7 +18,5 @@ draftclear:
 
 clear: 
 	latexmk -C
-	rm main.bbl
-	rm main.run.xml
-	rm main.log
+	rm main.bbl main.run.xml main.log
 
