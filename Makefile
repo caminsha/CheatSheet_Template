@@ -1,22 +1,11 @@
-TYP=Cheatsheet
-NAME=CamenzindMarco
-VERSION=51
+.PHONY: build clear
 
-.PHONY: draftpub publish draftclear main.pdf clear
-
-main.pdf:
+build:
 	latexmk -pdf main.tex
 
-draftpub: main.pdf
-	cp main.pdf DRAFT_${VERSION}_${TYP}_${NAME}.pdf
-
-publish: main.pdf
-	cp main.pdf ${VERSION}_${TYP}_${NAME}.pdf
-
-draftclear: 
-	rm DRAFT_*.pdf
+view:
+	latexmk -pdf -pvc main.tex
 
 clear: 
 	latexmk -C
 	rm main.bbl main.run.xml main.log
-
